@@ -6,13 +6,14 @@ import Blogtitle from "../components/blogtitle"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ( ) => (
   <StaticQuery
     query={graphql`
       query {
 		allNodeArticle {
 			edges {
 			  node {
+				id
 				title
 			  }
 			}
@@ -22,9 +23,8 @@ const IndexPage = () => (
     render={(data) => (
       <Layout>
         <SEO title="Home"  />
-			lol{data.allNodeArticle.edges[0].node.title}
 				{data.allNodeArticle.edges.map(test => (
-			<Blogtitle test={test.node.title} />
+			<Blogtitle test={test.node.title} id={test.node.id} />
 				))}
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
@@ -37,13 +37,5 @@ const IndexPage = () => (
   />
 )
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
 
 export default IndexPage

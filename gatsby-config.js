@@ -30,7 +30,7 @@ module.exports = {
 	{
 	  resolve: `gatsby-source-drupal`,
 	  options: {
-		baseUrl: `http://news.loc/`,
+		baseUrl: `http://emergingdigital.be/`,
 		apiBase: `jsonapi`,
 	  },
 	},

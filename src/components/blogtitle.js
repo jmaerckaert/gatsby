@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "gatsby"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -20,5 +20,5 @@ import React from "react"
 
 export default Blogtitle*/
 export default function Header(props) {
-  return <h3>{props.test}</h3>
+  return <h3><Link to={`/${props.id}`}>{ props.test }</Link></h3>
 }
